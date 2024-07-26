@@ -52,6 +52,12 @@ const data = [
 ]
 
 export function Overview() {
+  //FIXME: https://github.com/recharts/recharts/issues/3615
+  const error = console.error
+  console.error = (...args) => {
+    if (/defaultProps/.test(args[0])) return
+    error(...args)
+  }
   return (
     <ResponsiveContainer width='100%' height={350}>
       <BarChart data={data}>

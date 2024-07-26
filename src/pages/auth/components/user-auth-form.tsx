@@ -16,21 +16,23 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/custom/button'
 import { PasswordInput } from '@/components/custom/password-input'
 import { cn } from '@/lib/utils'
-
+import { useMutation } from '@tanstack/react-query'
+import { login } from '@/api/AuthApi'
+import { toast } from 'react-toastify'
 interface UserAuthFormProps extends HTMLAttributes<HTMLDivElement> {}
 
 const formSchema = z.object({
   email: z
     .string()
-    .min(1, { message: 'Please enter your email' })
-    .email({ message: 'Invalid email address' }),
+    .min(1, { message: 'El email es requerido' })
+    .email({ message: 'Email no válido' }),
   password: z
     .string()
     .min(1, {
-      message: 'Please enter your password',
+      message: 'La contraseña es requerida',
     })
     .min(7, {
-      message: 'Password must be at least 7 characters long',
+      message: 'La contraseña debe tener al menos 7 caracteres de longitud.',
     }),
 })
 
@@ -45,11 +47,21 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     },
   })
 
+  const { mutate } = useMutation({
+    mutationFn: login,
+    onError: (error) => {
+      toast.error(error.message)
+    },
+    onSuccess: () => {
+      toast.success('Iniciando Sesión...')
+    },
+  })
+
   function onSubmit(data: z.infer<typeof formSchema>) {
     setIsLoading(true)
     console.log(data)
-
     setTimeout(() => {
+      mutate(data)
       setIsLoading(false)
     }, 3000)
   }
