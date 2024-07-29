@@ -1,6 +1,6 @@
 import { HTMLAttributes, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { IconBrandFacebook, IconBrandGithub } from '@tabler/icons-react'
@@ -46,24 +46,24 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       password: '',
     },
   })
-
+  const navigate = useNavigate()
   const { mutate } = useMutation({
     mutationFn: login,
+    onMutate: () => {
+      setIsLoading(true)
+    },
     onError: (error) => {
       toast.error(error.message)
+      setIsLoading(false)
     },
     onSuccess: () => {
-      toast.success('Iniciando Sesión...')
+      navigate('/')
+      setIsLoading(false)
     },
   })
 
   function onSubmit(data: z.infer<typeof formSchema>) {
-    setIsLoading(true)
-    console.log(data)
-    setTimeout(() => {
-      mutate(data)
-      setIsLoading(false)
-    }, 3000)
+    mutate(data)
   }
 
   return (
