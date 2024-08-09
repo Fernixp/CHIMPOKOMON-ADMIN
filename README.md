@@ -1,66 +1,57 @@
-# Shadcn Admin Dashboard
+# Dashboard de Administración de Chimpokomon
 
-Admin Dashboard UI crafted with Shadcn and Vite. Built with responsiveness and accessibility in mind.
+Interfaz de usuario para el panel de administración del blog Chimpokomon, construida con Shadcn y Vite. Diseñada con enfoque en la responsividad y la accesibilidad.
 
 ![alt text](public/images/shadcn-admin.png)
 
-I've been creating dashboard UIs at work and for my personal projects. I always wanted to make a reusable collection of dashboard UI for future projects; and here it is now. While I've created a few custom components, some of the code is directly adapted from ShadcnUI examples.
+Este panel está diseñado para gestionar y supervisar el contenido del blog Chimpokomon. Incluye una colección reutilizable de componentes de interfaz y diseños adaptados para tareas administrativas.
 
-> This is not a starter project (template) though. I'll probably make one in the future.
+> Nota: Este es un panel de administración específico para el blog Chimpokomon. En el futuro, podría crearse una plantilla de inicio más general.
 
-## Features
+## Características
 
-- Light/dark mode
-- Responsive
-- Accessible
-- Sidebar and header layouts
-- 10+ pages
-- Extra custom components
+- Modo claro/oscuro
+- Diseño responsivo
+- Accesibilidad mejorada
+- Diseños con barra lateral y cabecera
+- Componentes personalizados para la gestión del blog
 
-## Tech Stack
+## Stack
 
-**UI:** [ShadcnUI](https://ui.shadcn.com) (TailwindCSS + RadixUI)
+**Framework de UI:** [ShadcnUI](https://ui.shadcn.com) (TailwindCSS + RadixUI)
 
-**Build Tool:** [Vite](https://vitejs.dev/)
+**Herramienta de Construcción:** [Vite](https://vitejs.dev/)
 
-**Routing:** [React Router](https://reactrouter.com/en/main)
+**Enrutado:** [React Router](https://reactrouter.com/en/main)
 
-**Type Checking:** [TypeScript](https://www.typescriptlang.org/)
+**Tipado:** [TypeScript](https://www.typescriptlang.org/)
 
-**Linting/Formatting:** [Eslint](https://eslint.org/) & [Prettier](https://prettier.io/)
+**Linting/Formateo:** [Eslint](https://eslint.org/) & [Prettier](https://prettier.io/)
 
-**Icons:** [Tabler Icons](https://tabler.io/icons)
+**Íconos:** [Tabler Icons](https://tabler.io/icons)
 
-## Run Locally
+**Gestión de Estado:** [React Context API](https://reactjs.org/docs/context.html)
 
-Clone the project
+## Ejecutar Localmente
 
-```bash
-  git clone https://github.com/satnaing/shadcn-admin.git
-```
-
-Go to the project directory
+Clona el proyecto
 
 ```bash
-  cd shadcn-admin
+  git clone https://github.com/fernixp/chimpokomon-admin.git
+```
+ Ve al directorio del proyecto
+```bash
+  cd chimpokomon-admin
 ```
 
-Install dependencies
+Instala las dependencias
 
 ```bash
-  pnpm install
+  npm i
 ```
 
-Start the server
+Inicia el proyecto!
 
 ```bash
-  pnpm run dev
+  npm run dev
 ```
-
-## Author
-
-Crafted with 🤍 by [@satnaing](https://github.com/satnaing)
-
-## License
-
-Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
