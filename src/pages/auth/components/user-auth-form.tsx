@@ -31,9 +31,6 @@ const formSchema = z.object({
     .min(1, {
       message: 'La contraseña es requerida',
     })
-    .min(7, {
-      message: 'La contraseña debe tener al menos 7 caracteres de longitud.',
-    }),
 })
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {

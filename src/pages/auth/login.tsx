@@ -1,7 +1,13 @@
 import { Card } from '@/components/ui/card'
 import { UserAuthForm } from './components/user-auth-form'
+import { useAuth } from '@/hooks/useAuth'
+import { Navigate } from 'react-router-dom'
 
 export default function Login() {
+  const { data, isError, isLoading } = useAuth()
+  if (data) {
+    return <Navigate to='/' />
+  }
   return (
     <>
       <div className='container grid h-svh flex-col items-center justify-center bg-primary-foreground lg:max-w-none lg:px-0'>
