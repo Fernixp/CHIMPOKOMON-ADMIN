@@ -1,0 +1,26 @@
+export const users = [
+  {
+    id: 11,
+    name: 'Fernando Nina',
+    username: 'ferni',
+    email: 'fernandonina611@gmail.com',
+    birthdate: '2001-04-22',
+    email_verified_at: '2024-06-28T21:30:34.000000Z',
+    role: 'USER',
+    status: 'ACTIVO',
+    created_at: '2024-06-28T21:30:34.000000Z',
+    updated_at: '2024-06-28T21:30:34.000000Z',
+  },
+  {
+    id: 12,
+    name: 'Jose Manuel',
+    username: 'jose',
+    email: 'josema@gmail.com',
+    birthdate: '2001-04-22',
+    email_verified_at: '2024-06-28T21:30:34.000000Z',
+    role: 'USER',
+    status: 'INACTIVO',
+    created_at: '2024-06-28T21:30:34.000000Z',
+    updated_at: '2024-06-28T21:30:34.000000Z',
+  },
+]

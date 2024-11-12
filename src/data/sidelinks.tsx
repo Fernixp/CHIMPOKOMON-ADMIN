@@ -21,6 +21,9 @@ import {
   IconUserShield,
   IconUsers,
   IconLock,
+  IconFile3d,
+  IconTag,
+  IconCell,
 } from '@tabler/icons-react'
 
 export interface NavLink {
@@ -40,6 +43,30 @@ export const sidelinks: SideLink[] = [
     label: '',
     href: '/',
     icon: <IconLayoutDashboard size={22} />,
+  },
+  {
+    title: 'Users',
+    label: '',
+    href: '/users',
+    icon: <IconUsers size={20} />,
+  },
+  {
+    title: 'Posts',
+    label: '3',
+    href: '/posts',
+    icon: <IconFile3d size={20} />,
+  },
+  {
+    title: 'Tags',
+    label: '9',
+    href: '/tags',
+    icon: <IconTag size={20} />
+  },
+  {
+    title: 'Categorias',
+    label: '',
+    href: '/categories',
+    icon: <IconCell size={20} />,
   },
   {
     title: 'Tasks',
@@ -96,12 +123,6 @@ export const sidelinks: SideLink[] = [
         icon: <IconHexagonNumber5 size={20} />,
       },
     ],
-  },
-  {
-    title: 'Users',
-    label: '',
-    href: '/users',
-    icon: <IconUsers size={20} />,
   },
   {
     title: 'Requests',
